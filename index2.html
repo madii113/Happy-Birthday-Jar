@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Feelings Jar 💛</title>
+<style>
+    body {
+        margin: 0;
+        background: #ffe6f2;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+        color: #ff4f89;
+        margin-bottom: 20px;
+    }
+
+    .jar {
+        width: 300px;
+        height: 420px;
+        border: 6px solid #ff4f89;
+        border-radius: 40px;
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .note {
+        width: 80px;
+        height: 50px;
+        background: #ffda79;
+        border-radius: 10px;
+        position: absolute;
+        padding: 6px;
+        font-size: 12px;
+        cursor: pointer;
+        transform: rotate(-5deg);
+        text-align: center;
+    }
+
+    #popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        font-size: 18px;
+        width: 300px;
+        text-align: center;
+        display: none;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    #close {
+        margin-top: 15px;
+        background: #ff4f89;
+        color: white;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Your Feelings Jar 💛</h1>
+
+<div class="jar">
+    <div class="note" style="top:40px; left:30px;" onclick="show('You are way stronger than you think. Even on your tough days, you rise.')">💛</div>
+    <div class="note" style="top:120px; left:180px;" onclick="show('You deserve every bit of success you dream of. Your efforts will never go unnoticed.')">💛</div>
+    <div class="note" style="top:200px; left:70px;" onclick="show('It’s okay when things don’t go how we want. Life isn’t perfect but you always grow through it.')">💛</div>
+    <div class="note" style="top:260px; left:150px;" onclick="show('You are pure inside out. You truly deserve every happiness that comes your way.')">💛</div>
+    <div class="note" style="top:330px; left:60px;" onclick="show('Thank you for always being my strongest supporter, my fire brigade in every chaos.')">💛</div>
+</div>
+
+<div id="popup">
+    <p id="text"></p>
+    <button id="close" onclick="hide()">Close</button>
+</div>
+
+<script>
+    function show(msg) {
+        document.getElementById('text').innerText = msg;
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function hide() {
+        document.getElementById('popup').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
+
